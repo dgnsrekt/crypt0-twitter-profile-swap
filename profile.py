@@ -1,4 +1,3 @@
-#!python3.6
 
 import logging as log
 import tweepy
@@ -31,11 +30,11 @@ class TwitterProfile:
         self.user = self.api.me()
 
     def setBullishProfileStatus(self):
-        print('Profile set to bullish.')
+        log.info('Profile set to bullish.')
         self.api.update_profile_banner(CONFIG.banner['bullish'])
         self.api.update_profile_image(CONFIG.profile['bullish'])
 
     def setBearishProfileStatus(self):
-        print('Profile set to bearish.')
+        log.info('Profile set to bearish.')
         self.api.update_profile_banner(CONFIG.banner['bearish'])
         self.api.update_profile_image(CONFIG.profile['bearish'])
