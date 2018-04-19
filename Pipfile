@@ -15,6 +15,7 @@ tweepy = "*"
 coinmarketcap = "*"
 schedule = "*"
 structlog = "*"
+click = "*"
 
 
 [requires]

@@ -39,16 +39,3 @@ class TwitterProfile:
         print('Profile set to bearish.')
         self.api.update_profile_banner(CONFIG.banner['bearish'])
         self.api.update_profile_image(CONFIG.profile['bearish'])
-
-
-def test():
-    from time import sleep
-    profile = TwitterProfile()
-    profile.setBearishProfileStatus()
-    print('waiting 30 seconds')
-    sleep(30)
-    profile.setBullishProfileStatus()
-
-
-if __name__ == '__main__':
-    test()
