@@ -30,6 +30,7 @@ class Configuration:
         self.profile['bearish'] = str(BEARISH_PROFILE.absolute())
 
         self.twitter = self.twitterConfig()
+        self.lifx = self.lifxConfig()
 
     def checkFileSystem(self):
         logging.debug('Checking if all files are present.')
@@ -50,6 +51,9 @@ class Configuration:
                                       'CONSUMER_SECRET': '',
                                       'ACCESS_TOKEN': '',
                                       'ACCESS_SECRET': ''}
+            config['LIFX'] = {'ACTIVATE': False,
+                              'COUNT': 0}
+
             with open(CONFIGPATH, 'w') as configfile:
                 config.write(configfile)
                 logging.info('Creating {}'.format(CONFIGPATH))
@@ -68,3 +72,20 @@ class Configuration:
                     key.title(), CONFIGPATH))
 
         return twitter_keys
+
+    @classmethod
+    def lifxConfig(self):
+        config = ConfigParser()
+        config.read(CONFIGPATH)
+        lifx = config['LIFX'].getboolean('activate')
+        lifx_count = int(config['LIFX']['count'])
+        if lifx:
+            if lifx_count < 1:
+                raise Exception(
+                    'Add number of lifx lights to the {} file or set activate to False.'.format(CONFIGPATH))
+
+        return lifx, lifx_count
+
+
+CONFIG = Configuration()
+print(CONFIG.lifx)
