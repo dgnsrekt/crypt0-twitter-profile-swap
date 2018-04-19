@@ -1,4 +1,4 @@
-cryp0twitter-btc-sync
+crypt0twitter-btc-sync
 #############################
 
 Sync your twitter profile picture and banner with BTC 1H percent change.
