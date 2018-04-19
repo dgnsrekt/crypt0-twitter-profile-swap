@@ -12,7 +12,7 @@ def getBTC_PercentChange():
     market = Market()
     bitcoin = market.ticker(currency='bitcoin')[0]
     percent_change = float(bitcoin['percent_change_1h'])
-    print('Checking BTC 1 Hour PCHG:{}'.format(pct))
+    print('Checking BTC 1 Hour PCHG:{}'.format(percent_change))
     return percent_change
 
 
