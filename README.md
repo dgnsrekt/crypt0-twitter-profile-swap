@@ -1,5 +1,5 @@
 # cryp0twitter-btc-sync
-Sync your twitter profile with btc price changes..
+Sync your twitter profile picture and banner with BTC 1H percent change.
 
 ![](docs/images/BearishTwitterProfile.png)
 
