@@ -16,7 +16,7 @@ class TwitterProfile:
         self.consumer_key = self.twitter_keys['consumer_key']
         self.consumer_secret = self.twitter_keys['consumer_secret']
         self.access_token = self.twitter_keys['access_token']
-        self.access_token_secret = self.twitter_keys['access_token_secret']
+        self.access_token_secret = self.twitter_keys['access_secret']
 
         # OAuth process, using the keys and tokens
         self.auth = tweepy.OAuthHandler(
@@ -45,6 +45,7 @@ def test():
     from time import sleep
     profile = TwitterProfile()
     profile.setBearishProfileStatus()
+    print('waiting 30 seconds')
     sleep(30)
     profile.setBullishProfileStatus()
 
