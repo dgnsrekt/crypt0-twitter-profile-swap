@@ -1,3 +1,5 @@
+#!python3.6
+
 import click
 import schedule
 import time
